@@ -1,0 +1,35 @@
+ 
+{%extends 'main/hood.html'%}
+{% load staticfiles%}
+{% load bootstrap4 %}
+
+{% block content %}
+{{block.super}}
+<section>
+    <div class="container" style="margin-top:5rem;">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2>WELCOME TO NAIROBI NEIGHBORHOOD</h2>
+                <h5>Feel free to know your neighbors and their daily activities.</h5>
+            </div>
+        </div>
+        <div class="row">
+                {% for hood in hoods %}
+            <div class="col-md-4">
+                    <div class="card" style="">
+                            <img src="{{hood.hood_pic.url}}" class="card-img-top" alt="{{hood.name}}" class="img-thumnail" style="">
+                            <div class="card-body">
+                                <h2 class="card-title text-center">{{hood.name}}</h2>
+                                <h1 class="card-text text-center">{{hood.location}}</h1>
+                                <a href="{% url 'hood' hood.id%}" class="btn btn-primary">Click to Join</a>
+                            </div>
+                        </div>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+</section>
+        
+           
+     
+{% endblock %}
