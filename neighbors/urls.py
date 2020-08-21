@@ -8,6 +8,8 @@ urlpatterns = [
     url(r'^index/$', views.index_test, name='index'),
     # url(r'^profile/(\d+)', views.profile, name='profile'),
     # url(r'^profile_update/(\d+)', views.profile_update, name='profile_update'),
+    #Business Search URL
+    url(r'^search/business/', views.business_search, name='business_search'),
     # API urls
     url(r'api/hood/$', views.Hoods.as_view()),
 ]
