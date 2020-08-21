@@ -33,7 +33,8 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField()
-    neighborhood = models.ForeignKey(Neighborhood, on_delete=models.CASCADE)
+    neighborhood = models.ForeignKey(
+        Neighborhood, on_delete=models.CASCADE, blank=True, null=True)
     phone_number = models.CharField(max_length=15, blank=True)
     status = models.CharField(max_length=15)
 
